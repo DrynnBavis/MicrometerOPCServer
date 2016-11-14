@@ -1,0 +1,9 @@
+C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\bin\Debug\C# Simple Server.exe
+C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\bin\Debug\C# Simple Server.pdb
+C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\bin\Debug\Interop.NDISLIKDA.dll
+C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\obj\Debug\CS Simple Server.csprojResolveAssemblyReference.cache
+C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\obj\Debug\OPCServer_Simulator.Form1.resources
+C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\obj\Debug\OPCServer_Simulator.Properties.Resources.resources
+C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\obj\Debug\CS Simple Server.csproj.GenerateResource.Cache
+C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\obj\Debug\C# Simple Server.exe
+C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\obj\Debug\C# Simple Server.pdb
