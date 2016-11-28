@@ -1,9 +1,14 @@
-C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\bin\Debug\C# Simple Server.exe
-C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\bin\Debug\C# Simple Server.pdb
-C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\bin\Debug\Interop.NDISLIKDA.dll
-C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\obj\Debug\CS Simple Server.csprojResolveAssemblyReference.cache
-C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\obj\Debug\OPCServer_Simulator.Form1.resources
-C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\obj\Debug\OPCServer_Simulator.Properties.Resources.resources
-C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\obj\Debug\CS Simple Server.csproj.GenerateResource.Cache
-C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\obj\Debug\C# Simple Server.exe
-C:\Program Files (x86)\Software Toolbox\SLIK-DA5\Samples\VS2015\dotNet\C#\C # Simple Server\obj\Debug\C# Simple Server.pdb
+C:\Users\bdavis\Desktop\Micrometer OPC Server\bin\Debug\GyptechOPCServer.exe.manifest
+C:\Users\bdavis\Desktop\Micrometer OPC Server\bin\Debug\GyptechOPCServer.application
+C:\Users\bdavis\Desktop\Micrometer OPC Server\bin\Debug\GyptechOPCServer.exe
+C:\Users\bdavis\Desktop\Micrometer OPC Server\bin\Debug\GyptechOPCServer.pdb
+C:\Users\bdavis\Desktop\Micrometer OPC Server\bin\Debug\Interop.NDISLIKDA.dll
+C:\Users\bdavis\Desktop\Micrometer OPC Server\obj\Debug\CS Simple Server.csprojResolveAssemblyReference.cache
+C:\Users\bdavis\Desktop\Micrometer OPC Server\obj\Debug\OPCServer_Simulator.Form1.resources
+C:\Users\bdavis\Desktop\Micrometer OPC Server\obj\Debug\OPCServer_Simulator.Properties.Resources.resources
+C:\Users\bdavis\Desktop\Micrometer OPC Server\obj\Debug\CS Simple Server.csproj.GenerateResource.Cache
+C:\Users\bdavis\Desktop\Micrometer OPC Server\obj\Debug\GyptechOPCServer.TrustInfo.xml
+C:\Users\bdavis\Desktop\Micrometer OPC Server\obj\Debug\GyptechOPCServer.exe.manifest
+C:\Users\bdavis\Desktop\Micrometer OPC Server\obj\Debug\GyptechOPCServer.application
+C:\Users\bdavis\Desktop\Micrometer OPC Server\obj\Debug\GyptechOPCServer.exe
+C:\Users\bdavis\Desktop\Micrometer OPC Server\obj\Debug\GyptechOPCServer.pdb
