@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Microsoft.VisualBasic;
@@ -19,15 +20,51 @@ namespace OPCServer_Simulator
         public Form1()
         {
             InitializeComponent();
+            instance = this;
             fillMeasView();
+
+            string[] args = Environment.GetCommandLineArgs();
+            if (args.Length > 1)
+            {
+                switch (args[1])
+                {
+                    case "register":
+                        try
+                        {
+                            slikServer1.RegisterServer();
+                            MessageBox.Show("Server registered successfully!");
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show("Error: Could not register server." + "\nAdditional Information: " + ex.Message, "Registering Server Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        Environment.Exit(0);
+                        break;
+                    case "unregister":
+                        try
+                        {
+                            slikServer1.UnregisterServer();
+                            MessageBox.Show("Server unregistered successfully!");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error: Could not unregister server." + "\nAdditional Information: " + ex.Message, "Unregistering Server Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        break;
+                }
+            }
+                
         }
 
         private ISLIKTags myOpcTags;
-        private Random randomizer = new Random();
         private int itemIndex = 1;
         private bool refreshNeeded = false;
-        private static bool _pendingMeasurement = false;
-        public static bool pendingMeasurement
+        private bool _pendingMeasurement = false;
+        public static string myString = "";
+        public bool pendingMeasurement
         {
             get
             {
@@ -36,19 +73,21 @@ namespace OPCServer_Simulator
             set
             {
                 _pendingMeasurement = value;
-                //somehow addMeasurement() needs to be called here
+                if(_pendingMeasurement)
+                {
+                    addMeasurement();
+                    _pendingMeasurement = false;
+                    SerialPortConfig.myString = "";
+                }
             }
         }
-        public static event Action<bool> BoolChanged;
-
-        public SerialPortConfig mySerialPort = new SerialPortConfig();
+        public static Form1 instance;
 
         private void Form1_Load(object sender, EventArgs e)
         {
             //Load the items from non-volatile memory into voltatile for use
             comPortCombo.Text = Properties.Settings.Default.portName;
             numMeasBox.Text = Properties.Settings.Default.numItems.ToString();
-            mySerialPort.createPort(Properties.Settings.Default.portName);
 
             //Populating comboBox with available COM ports
             updatePorts();
@@ -73,29 +112,35 @@ namespace OPCServer_Simulator
             myOpcTags.Add("MicrometerTags.index", (int)readWriteAccess, 0, 0, DateTime.Now, null);
             myOpcTags["MicrometerTags.index"].DataType = (short)VariantType.Integer;
             myOpcTags["MicrometerTags.index"].SetVQT((0.0000), 192, DateTime.Now);
+            myOpcTags["MicrometerTags.index"].AccessPermissions = 3;
 
-            // In this example, we will also register and start the server
-            // Under normal circumstances you would NOT do this, because this is a
-            // step that should be done once and once-only, at the end of an
-            // installation routine. Most OPC Server implementations allow the use
-            // of a command-line argument to call this function.
-            //slikServer1.RegisterServer();
-
-            // Now START the OPC Server interface. This is called whenever your
-            // application starts.
             slikServer1.StartServer();
 
-            if (!mySerialPort.isOpen)
+            //Populate tags with number of items the user requested
+            updateOPCItems();
+
+            
+            SerialPortConfig.createPort(Properties.Settings.Default.portName);
+
+            if (!SerialPortConfig.isOpen)
             {
                 try
                 {
-                    mySerialPort.openSerialPort(); //specifies to open the port with the name last saved in settings
+                    SerialPortConfig.openSerialPort();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not open Serial port " + Properties.Settings.Default.portName + "\nAdditional Information: " + ex.Message, "Port Opening Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                if (SerialPortConfig.isOpen)
+                {
                     portActiveStatusLbl.Text = Properties.Settings.Default.portName + " OPEN";
                     portActiveStatusLbl.ForeColor = Color.Green;
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Error: Serial Port in memory is not available. Please update port in 'Micrometer Settings'.", "Invalid Serial Port Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    portActiveStatusLbl.Text = Properties.Settings.Default.portName + " CLOSED";
+                    portActiveStatusLbl.ForeColor = Color.Red;
                 }
             }
         }
@@ -120,12 +165,6 @@ namespace OPCServer_Simulator
                     // Notify the OPC Clients that you want to shut down. This gives
                     // each OPC Client enough time to gracefully disconnect.
                     slikServer1.RequestDisconnect("User Requested Shutdown");
-
-                    // This function, just like the ".RegisterServer" as seen in the 
-                    // Form_Load() event is a function that should not be called under
-                    // normal circumstances. This should be done by the installer
-                    // when the application is being removed from the computer.
-                    //SlikServer1.UnregisterServer()
                 }
                 catch (Exception ex)
                 {
@@ -218,10 +257,14 @@ namespace OPCServer_Simulator
         {
             if (pendingMeasurement)
             {
-                measView.Items[itemIndex - 1].SubItems[1].Text = SerialPortConfig.myString;
+                if(measView.InvokeRequired)
+                {
+                    measView.Invoke(new MethodInvoker(delegate { measView.Items[itemIndex - 1].SubItems[1].Text = SerialPortConfig.myString; }));
+                }
+                
                 if (myOpcTags != null)
                 {
-                    myOpcTags["MicrometerTags.meas" + itemIndex].SetVQT(Convert.ToDouble(SerialPortConfig.myString), 192, DateTime.Now);
+                    myOpcTags["MicrometerTags.meas" + itemIndex].SetVQT(Convert.ToDouble(SerialPortConfig.myString), (short)QualityStatusEnum.sdaGood, DefaultValues.SetVQT_Timestamp);
                 }
                 if (itemIndex == OPCServer_Simulator.Properties.Settings.Default.numItems)
                 {
@@ -239,13 +282,20 @@ namespace OPCServer_Simulator
                     if (refreshNeeded)
                     {
                         bool skippedOnce = false;
-                        foreach (ListViewItem item in measView.Items)
+                        if (measView.InvokeRequired)
                         {
-                            if (skippedOnce)
-                                item.SubItems[1].Text = "0.0000";
-                            else
-                                skippedOnce = true;
+                            measView.Invoke(new MethodInvoker(delegate 
+                            {
+                                foreach (ListViewItem item in measView.Items)
+                                {
+                                    if (skippedOnce)
+                                        item.SubItems[1].Text = "0.0000";
+                                    else
+                                        skippedOnce = true;
+                                }
+                            }));
                         }
+
                         for (int i = 2; i <= OPCServer_Simulator.Properties.Settings.Default.numItems; i++) //clear all other values (1 is skipped because we just gave that a value for this new set)
                             myOpcTags["MicrometerTags.meas" + i].SetVQT((0.0000), 192, DateTime.Now);
                     }
@@ -280,8 +330,8 @@ namespace OPCServer_Simulator
         private void updateOPCItems()
         {
             AccessPermissionsEnum readWriteAccess = AccessPermissionsEnum.sdaReadAccess | AccessPermissionsEnum.sdaWriteAccess;
-
-            myOpcTags.Clear();
+            if (myOpcTags != null)
+                myOpcTags.Clear();
             myOpcTags.Add("MicrometerTags.LogSet", (int)readWriteAccess, 0, 0, DateTime.Now, null);
             myOpcTags["MicrometerTags.LogSet"].DataType = (short)VariantType.Boolean;
             myOpcTags["MicrometerTags.LogSet"].SetVQT(Convert.ToInt32(true), 192, DateTime.Now);
@@ -290,9 +340,9 @@ namespace OPCServer_Simulator
             myOpcTags["MicrometerTags.index"].SetVQT((0.0000), 192, DateTime.Now);
             for (int i = 1; i <= Convert.ToInt32(numMeasBox.Text); i++) //adding the specified number of items to OPC server
             {
-                myOpcTags.Add("MicrometerTags.meas" + i, (int)readWriteAccess, 0, 0, DateTime.Now, null);
-                myOpcTags["MicrometerTags.meas" + i].DataType = (short)VariantType.Double;
-                myOpcTags["MicrometerTags.meas" + i].SetVQT((0.0000), 192, DateTime.Now);
+                myOpcTags.Add("MicrometerTags.meas" + i.ToString(), (int)readWriteAccess, 0, 0, DateTime.Now, null);
+                myOpcTags["MicrometerTags.meas" + i.ToString()].DataType = (short)VarEnum.VT_R8;
+                myOpcTags["MicrometerTags.meas" + i.ToString()].SetVQT((0.0000), 192, DateTime.Now);
             }
         }
 
@@ -334,13 +384,13 @@ namespace OPCServer_Simulator
         {
             try
             {
-                mySerialPort.openSerialPort();
+                SerialPortConfig.openSerialPort();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Error: Could not open Serial port " + Properties.Settings.Default.portName, "Port Opening Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: Could not open Serial port " + Properties.Settings.Default.portName + "\nAdditional Information: " + ex.Message, "Port Opening Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (mySerialPort.isOpen)
+            if (SerialPortConfig.isOpen)
             {
                 portActiveStatusLbl.Text = Properties.Settings.Default.portName + " OPEN";
                 portActiveStatusLbl.ForeColor = Color.Green;
@@ -351,13 +401,13 @@ namespace OPCServer_Simulator
         {
             try
             {
-                mySerialPort.closeSerialPort();
+                SerialPortConfig.closeSerialPort();
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Error: Could not close Serial port " + Properties.Settings.Default.portName, "Port Closure Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: Could not close Serial port " + Properties.Settings.Default.portName + "\nAdditional Information: " + ex.Message, "Port Closure Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (!mySerialPort.isOpen)
+            if (!SerialPortConfig.isOpen)
             {
                 portActiveStatusLbl.Text = Properties.Settings.Default.portName + " CLOSED";
                 portActiveStatusLbl.ForeColor = Color.Red;
@@ -366,10 +416,25 @@ namespace OPCServer_Simulator
 
         private void Form1_Closing(object sender, FormClosingEventArgs e)
         {
-            // Determine if text has changed in the textbox by comparing to original text.
-            if (mySerialPort.isOpen)
+            if (SerialPortConfig.isOpen)
             {
-                mySerialPort.closeSerialPort();
+                SerialPortConfig.closeSerialPort();
+            }
+        }
+        private static void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+            SerialPort sp = (SerialPort)sender;
+            string indata = sp.ReadExisting(); //stores the char that fired the event into 'indata'
+            myString += indata;
+            if (indata.Contains("\r")) //check to see if char received indicates end of measurement
+            {
+                if (myString == "911\r") //911 is the code given when the micrometer is off, so we have it do nothing
+                    myString = "";
+                else
+                {
+                    myString = myString.Substring(4, 8);
+                    Form1.instance.pendingMeasurement = true;
+                }
             }
         }
     }

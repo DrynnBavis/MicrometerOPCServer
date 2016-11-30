@@ -41,24 +41,24 @@
             this.Index = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Measurement = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LastRecorded = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.slikServer1 = new NDI.SLIKDA.Interop.SLIKServer();
             this.numItemsLbl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chngNumItemsBtn = new System.Windows.Forms.Button();
             this.numMeasBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.portActiveStatusLbl = new System.Windows.Forms.Label();
+            this.portStatusLbl = new System.Windows.Forms.Label();
+            this.closePortBtn = new System.Windows.Forms.Button();
+            this.openPortBtn = new System.Windows.Forms.Button();
             this.updatePortsBtn = new System.Windows.Forms.Button();
             this.comPortCombo = new System.Windows.Forms.ComboBox();
             this.selPortLbl = new System.Windows.Forms.Label();
-            this.openPortBtn = new System.Windows.Forms.Button();
-            this.closePortBtn = new System.Windows.Forms.Button();
-            this.portStatusLbl = new System.Windows.Forms.Label();
-            this.portActiveStatusLbl = new System.Windows.Forms.Label();
+            this.slikServer1 = new NDI.SLIKDA.Interop.SLIKServer();
             this.Panel1.SuspendLayout();
             this.GroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.slikServer1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.slikServer1)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel1
@@ -108,7 +108,6 @@
             // GroupBox3
             // 
             this.GroupBox3.Controls.Add(this.measView);
-            this.GroupBox3.Controls.Add(this.slikServer1);
             this.GroupBox3.Location = new System.Drawing.Point(12, 12);
             this.GroupBox3.Name = "GroupBox3";
             this.GroupBox3.Size = new System.Drawing.Size(284, 244);
@@ -143,15 +142,6 @@
             // 
             this.LastRecorded.Text = "Last Recorded Value";
             this.LastRecorded.Width = 149;
-            // 
-            // slikServer1
-            // 
-            this.slikServer1.Enabled = true;
-            this.slikServer1.Location = new System.Drawing.Point(246, 0);
-            this.slikServer1.Name = "slikServer1";
-            this.slikServer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("slikServer1.OcxState")));
-            this.slikServer1.Size = new System.Drawing.Size(32, 32);
-            this.slikServer1.TabIndex = 14;
             // 
             // numItemsLbl
             // 
@@ -209,6 +199,43 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Micrometer Settings";
             // 
+            // portActiveStatusLbl
+            // 
+            this.portActiveStatusLbl.AutoSize = true;
+            this.portActiveStatusLbl.Location = new System.Drawing.Point(71, 79);
+            this.portActiveStatusLbl.Name = "portActiveStatusLbl";
+            this.portActiveStatusLbl.Size = new System.Drawing.Size(0, 13);
+            this.portActiveStatusLbl.TabIndex = 21;
+            // 
+            // portStatusLbl
+            // 
+            this.portStatusLbl.AutoSize = true;
+            this.portStatusLbl.Location = new System.Drawing.Point(7, 79);
+            this.portStatusLbl.Name = "portStatusLbl";
+            this.portStatusLbl.Size = new System.Drawing.Size(62, 13);
+            this.portStatusLbl.TabIndex = 20;
+            this.portStatusLbl.Text = "Port Status:";
+            // 
+            // closePortBtn
+            // 
+            this.closePortBtn.Location = new System.Drawing.Point(143, 46);
+            this.closePortBtn.Name = "closePortBtn";
+            this.closePortBtn.Size = new System.Drawing.Size(130, 23);
+            this.closePortBtn.TabIndex = 19;
+            this.closePortBtn.Text = "Close";
+            this.closePortBtn.UseVisualStyleBackColor = true;
+            this.closePortBtn.Click += new System.EventHandler(this.closePortBtn_Click);
+            // 
+            // openPortBtn
+            // 
+            this.openPortBtn.Location = new System.Drawing.Point(9, 46);
+            this.openPortBtn.Name = "openPortBtn";
+            this.openPortBtn.Size = new System.Drawing.Size(130, 23);
+            this.openPortBtn.TabIndex = 18;
+            this.openPortBtn.Text = "Open";
+            this.openPortBtn.UseVisualStyleBackColor = true;
+            this.openPortBtn.Click += new System.EventHandler(this.openPortBtn_Click);
+            // 
             // updatePortsBtn
             // 
             this.updatePortsBtn.Location = new System.Drawing.Point(203, 17);
@@ -237,48 +264,22 @@
             this.selPortLbl.TabIndex = 15;
             this.selPortLbl.Text = "Select Port:";
             // 
-            // openPortBtn
+            // slikServer1
             // 
-            this.openPortBtn.Location = new System.Drawing.Point(9, 46);
-            this.openPortBtn.Name = "openPortBtn";
-            this.openPortBtn.Size = new System.Drawing.Size(130, 23);
-            this.openPortBtn.TabIndex = 18;
-            this.openPortBtn.Text = "Open";
-            this.openPortBtn.UseVisualStyleBackColor = true;
-            this.openPortBtn.Click += new System.EventHandler(this.openPortBtn_Click);
-            // 
-            // closePortBtn
-            // 
-            this.closePortBtn.Location = new System.Drawing.Point(143, 46);
-            this.closePortBtn.Name = "closePortBtn";
-            this.closePortBtn.Size = new System.Drawing.Size(130, 23);
-            this.closePortBtn.TabIndex = 19;
-            this.closePortBtn.Text = "Close";
-            this.closePortBtn.UseVisualStyleBackColor = true;
-            this.closePortBtn.Click += new System.EventHandler(this.closePortBtn_Click);
-            // 
-            // portStatusLbl
-            // 
-            this.portStatusLbl.AutoSize = true;
-            this.portStatusLbl.Location = new System.Drawing.Point(7, 79);
-            this.portStatusLbl.Name = "portStatusLbl";
-            this.portStatusLbl.Size = new System.Drawing.Size(62, 13);
-            this.portStatusLbl.TabIndex = 20;
-            this.portStatusLbl.Text = "Port Status:";
-            // 
-            // portActiveStatusLbl
-            // 
-            this.portActiveStatusLbl.AutoSize = true;
-            this.portActiveStatusLbl.Location = new System.Drawing.Point(71, 79);
-            this.portActiveStatusLbl.Name = "portActiveStatusLbl";
-            this.portActiveStatusLbl.Size = new System.Drawing.Size(0, 13);
-            this.portActiveStatusLbl.TabIndex = 21;
+            this.slikServer1.AccessibleName = "";
+            this.slikServer1.Enabled = true;
+            this.slikServer1.Location = new System.Drawing.Point(247, 14);
+            this.slikServer1.Name = "slikServer1";
+            this.slikServer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("slikServer1.OcxState")));
+            this.slikServer1.Size = new System.Drawing.Size(32, 32);
+            this.slikServer1.TabIndex = 18;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(310, 453);
+            this.Controls.Add(this.slikServer1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GroupBox3);
@@ -291,11 +292,11 @@
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
             this.GroupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.slikServer1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.slikServer1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,7 +313,6 @@
         private System.Windows.Forms.ColumnHeader Index;
         private System.Windows.Forms.ColumnHeader Measurement;
         private System.Windows.Forms.ColumnHeader LastRecorded;
-        private NDI.SLIKDA.Interop.SLIKServer slikServer1;
         private System.Windows.Forms.Label numItemsLbl;
         internal System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox numMeasBox;
@@ -325,6 +325,7 @@
         private System.Windows.Forms.Label portStatusLbl;
         private System.Windows.Forms.Button closePortBtn;
         private System.Windows.Forms.Button openPortBtn;
+        private NDI.SLIKDA.Interop.SLIKServer slikServer1;
     }
 }
 

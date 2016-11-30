@@ -18,12 +18,12 @@ C:\Users\gyptech\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\OPCServ
 C:\Users\gyptech\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\OPCServer_Simulator.Properties.Resources.resources
 C:\Users\gyptech\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\GyptechOPCServer.csproj.GenerateResource.Cache
 C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\bin\Debug\GyptechOPCServer.exe.config
-C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\GyptechOPCServer.exe
-C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\GyptechOPCServer.pdb
 C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\bin\Debug\GyptechOPCServer.exe
 C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\bin\Debug\GyptechOPCServer.pdb
 C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\bin\Debug\Interop.NDISLIKDA.dll
-C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\GyptechOPCServer.csprojResolveAssemblyReference.cache
 C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\OPCServer_Simulator.Form1.resources
 C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\OPCServer_Simulator.Properties.Resources.resources
 C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\GyptechOPCServer.csproj.GenerateResource.Cache
+C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\GyptechOPCServer.exe
+C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\GyptechOPCServer.pdb
+C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\GyptechOPCServer.csprojResolveAssemblyReference.cache

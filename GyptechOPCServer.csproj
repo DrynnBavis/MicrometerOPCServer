@@ -177,6 +177,9 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="Resources\Interop.NDISLIKDA.dll" />
+    <Content Include="Resources\regserver.js" />
+    <Content Include="Resources\System.Net.Http.dll" />
+    <Content Include="Resources\unregserver.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
