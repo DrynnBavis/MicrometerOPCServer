@@ -40,7 +40,6 @@
             this.measView = new System.Windows.Forms.ListView();
             this.Index = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Measurement = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LastRecorded = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numItemsLbl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chngNumItemsBtn = new System.Windows.Forms.Button();
@@ -67,7 +66,7 @@
             this.Panel1.Controls.Add(this.ExitButton);
             this.Panel1.Controls.Add(this.Label1);
             this.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Panel1.Location = new System.Drawing.Point(0, 420);
+            this.Panel1.Location = new System.Drawing.Point(0, 429);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(310, 33);
             this.Panel1.TabIndex = 10;
@@ -110,7 +109,7 @@
             this.GroupBox3.Controls.Add(this.measView);
             this.GroupBox3.Location = new System.Drawing.Point(12, 12);
             this.GroupBox3.Name = "GroupBox3";
-            this.GroupBox3.Size = new System.Drawing.Size(284, 244);
+            this.GroupBox3.Size = new System.Drawing.Size(284, 246);
             this.GroupBox3.TabIndex = 12;
             this.GroupBox3.TabStop = false;
             this.GroupBox3.Text = "Measurement Data";
@@ -119,8 +118,7 @@
             // 
             this.measView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Index,
-            this.Measurement,
-            this.LastRecorded});
+            this.Measurement});
             this.measView.Location = new System.Drawing.Point(7, 20);
             this.measView.Name = "measView";
             this.measView.Size = new System.Drawing.Size(271, 218);
@@ -131,17 +129,12 @@
             // Index
             // 
             this.Index.Text = "Index";
-            this.Index.Width = 41;
+            this.Index.Width = 48;
             // 
             // Measurement
             // 
             this.Measurement.Text = "Measurement";
-            this.Measurement.Width = 77;
-            // 
-            // LastRecorded
-            // 
-            this.LastRecorded.Text = "Last Recorded Value";
-            this.LastRecorded.Width = 149;
+            this.Measurement.Width = 112;
             // 
             // numItemsLbl
             // 
@@ -157,7 +150,7 @@
             this.groupBox1.Controls.Add(this.chngNumItemsBtn);
             this.groupBox1.Controls.Add(this.numMeasBox);
             this.groupBox1.Controls.Add(this.numItemsLbl);
-            this.groupBox1.Location = new System.Drawing.Point(12, 262);
+            this.groupBox1.Location = new System.Drawing.Point(12, 264);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(284, 48);
             this.groupBox1.TabIndex = 13;
@@ -192,7 +185,7 @@
             this.groupBox2.Controls.Add(this.updatePortsBtn);
             this.groupBox2.Controls.Add(this.comPortCombo);
             this.groupBox2.Controls.Add(this.selPortLbl);
-            this.groupBox2.Location = new System.Drawing.Point(12, 316);
+            this.groupBox2.Location = new System.Drawing.Point(12, 318);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(284, 98);
             this.groupBox2.TabIndex = 17;
@@ -278,7 +271,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 453);
+            this.ClientSize = new System.Drawing.Size(310, 462);
             this.Controls.Add(this.slikServer1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -312,7 +305,6 @@
         private System.Windows.Forms.ListView measView;
         private System.Windows.Forms.ColumnHeader Index;
         private System.Windows.Forms.ColumnHeader Measurement;
-        private System.Windows.Forms.ColumnHeader LastRecorded;
         private System.Windows.Forms.Label numItemsLbl;
         internal System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox numMeasBox;

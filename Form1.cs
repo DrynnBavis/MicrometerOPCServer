@@ -21,7 +21,6 @@ namespace OPCServer_Simulator
         {
             InitializeComponent();
             instance = this;
-            fillMeasView();
 
             string[] args = Environment.GetCommandLineArgs();
             if (args.Length > 1)
@@ -60,10 +59,9 @@ namespace OPCServer_Simulator
         }
 
         private ISLIKTags myOpcTags;
-        private int itemIndex = 1;
-        private bool refreshNeeded = false;
+        private int itemIndex = 0;
+        private int histIndex = 0;
         private bool _pendingMeasurement = false;
-        public static string myString = "";
         public bool pendingMeasurement
         {
             get
@@ -106,9 +104,9 @@ namespace OPCServer_Simulator
             // your OPC Servers address-space.
             // In this case, we will define a group: "USER"
             // .... you will see it prefixed to the tagnames.
-            myOpcTags.Add("MicrometerTags.LogSet", (int)readWriteAccess, 0, 0, DateTime.Now, null);
-            myOpcTags["MicrometerTags.LogSet"].DataType = (short)VariantType.Boolean;
-            myOpcTags["MicrometerTags.LogSet"].SetVQT(Convert.ToInt32(true), 192, DateTime.Now);
+            myOpcTags.Add("MicrometerTags.dateTime", (int)readWriteAccess, 0, 0, DateTime.Now, null);
+            myOpcTags["MicrometerTags.dateTime"].DataType = (short)VariantType.String;
+            myOpcTags["MicrometerTags.dateTime"].SetVQT("", 192, DateTime.Now);
             myOpcTags.Add("MicrometerTags.index", (int)readWriteAccess, 0, 0, DateTime.Now, null);
             myOpcTags["MicrometerTags.index"].DataType = (short)VariantType.Integer;
             myOpcTags["MicrometerTags.index"].SetVQT((0.0000), 192, DateTime.Now);
@@ -119,6 +117,8 @@ namespace OPCServer_Simulator
             //Populate tags with number of items the user requested
             updateOPCItems();
 
+            //viewtags on client as well
+            updateDisplayItems();
             
             SerialPortConfig.createPort(Properties.Settings.Default.portName);
 
@@ -142,17 +142,6 @@ namespace OPCServer_Simulator
                     portActiveStatusLbl.Text = Properties.Settings.Default.portName + " CLOSED";
                     portActiveStatusLbl.ForeColor = Color.Red;
                 }
-            }
-        }
-
-        private void fillMeasView()
-        {
-            for (int i = 1; i <= OPCServer_Simulator.Properties.Settings.Default.numItems; i++)
-            {
-                ListViewItem lvi = new ListViewItem(i.ToString());
-                lvi.SubItems.Add("null");
-                lvi.SubItems.Add("null");
-                measView.Items.Add(lvi);
             }
         }
 
@@ -257,55 +246,28 @@ namespace OPCServer_Simulator
         {
             if (pendingMeasurement)
             {
-                if(measView.InvokeRequired)
-                {
-                    measView.Invoke(new MethodInvoker(delegate { measView.Items[itemIndex - 1].SubItems[1].Text = SerialPortConfig.myString; }));
-                }
-                
-                if (myOpcTags != null)
-                {
-                    myOpcTags["MicrometerTags.meas" + itemIndex].SetVQT(Convert.ToDouble(SerialPortConfig.myString), (short)QualityStatusEnum.sdaGood, DefaultValues.SetVQT_Timestamp);
-                }
                 if (itemIndex == OPCServer_Simulator.Properties.Settings.Default.numItems)
                 {
+                    updateDisplayItems();
                     itemIndex = 1;
-                    if (myOpcTags != null)
-                    {
-                        myOpcTags["MicrometerTags.LogSet"].SetVQT(true, 192, DateTime.Now); //this bit is toggled here to tell the client to save the set
-                        myOpcTags["MicrometerTags.index"].SetVQT(0, 192, DateTime.Now); //update HMI to view newly added set
-                        refreshNeeded = true;
-                    }
                 }
                 else
                 {
                     itemIndex++;
-                    if (refreshNeeded)
-                    {
-                        bool skippedOnce = false;
-                        if (measView.InvokeRequired)
-                        {
-                            measView.Invoke(new MethodInvoker(delegate 
-                            {
-                                foreach (ListViewItem item in measView.Items)
-                                {
-                                    if (skippedOnce)
-                                        item.SubItems[1].Text = "0.0000";
-                                    else
-                                        skippedOnce = true;
-                                }
-                            }));
-                        }
-
-                        for (int i = 2; i <= OPCServer_Simulator.Properties.Settings.Default.numItems; i++) //clear all other values (1 is skipped because we just gave that a value for this new set)
-                            myOpcTags["MicrometerTags.meas" + i].SetVQT((0.0000), 192, DateTime.Now);
-                    }
-                    if (myOpcTags != null)
-                    {
-                        myOpcTags["MicrometerTags.LogSet"].SetVQT(false, 192, DateTime.Now);
-                        refreshNeeded = false;
-                    }
                 }
+                var value = Properties.Settings.Default["meas" + itemIndex] as System.Collections.Specialized.StringCollection;
+                value[0] = SerialPortConfig.myString;
+                double dValue = Convert.ToDouble(value[0]);
+                updateDisplayItems(); //update before shifting set of data so the recorded set remains on screen instead of n number of 0s
+                updateOPCItems();
 
+                if (itemIndex == Properties.Settings.Default.numItems)
+                {
+                    Properties.Settings.Default.dateTime[0] = System.DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+                    shiftDataIndex();
+                    Properties.Settings.Default.Save();
+                }
+                
             }
         }
 
@@ -332,24 +294,72 @@ namespace OPCServer_Simulator
             AccessPermissionsEnum readWriteAccess = AccessPermissionsEnum.sdaReadAccess | AccessPermissionsEnum.sdaWriteAccess;
             if (myOpcTags != null)
                 myOpcTags.Clear();
-            myOpcTags.Add("MicrometerTags.LogSet", (int)readWriteAccess, 0, 0, DateTime.Now, null);
-            myOpcTags["MicrometerTags.LogSet"].DataType = (short)VariantType.Boolean;
-            myOpcTags["MicrometerTags.LogSet"].SetVQT(Convert.ToInt32(true), 192, DateTime.Now);
             myOpcTags.Add("MicrometerTags.index", (int)readWriteAccess, 0, 0, DateTime.Now, null);
             myOpcTags["MicrometerTags.index"].DataType = (short)VariantType.Integer;
-            myOpcTags["MicrometerTags.index"].SetVQT((0.0000), 192, DateTime.Now);
+            myOpcTags["MicrometerTags.index"].SetVQT((0), 192, DateTime.Now);
+            myOpcTags.Add("MicrometerTags.dateTime", (int)AccessPermissionsEnum.sdaReadAccess, 0, 0, DateTime.Now, null);
+            myOpcTags["MicrometerTags.dateTime"].DataType = (short)VariantType.String;
+            myOpcTags["MicrometerTags.dateTime"].SetVQT(Properties.Settings.Default.dateTime[histIndex], 192, DateTime.Now);
             for (int i = 1; i <= Convert.ToInt32(numMeasBox.Text); i++) //adding the specified number of items to OPC server
             {
                 myOpcTags.Add("MicrometerTags.meas" + i.ToString(), (int)readWriteAccess, 0, 0, DateTime.Now, null);
                 myOpcTags["MicrometerTags.meas" + i.ToString()].DataType = (short)VarEnum.VT_R8;
-                myOpcTags["MicrometerTags.meas" + i.ToString()].SetVQT((0.0000), 192, DateTime.Now);
+                var value = Properties.Settings.Default["meas" + i] as System.Collections.Specialized.StringCollection;
+                double dValue = Convert.ToDouble(value[histIndex]);
+                myOpcTags["MicrometerTags.meas" + i.ToString()].SetVQT((dValue), 192, DateTime.Now);
             }
         }
 
         private void updateDisplayItems()
         {
-            measView.Items.Clear();
-            fillMeasView();
+            if (measView.InvokeRequired)
+            {
+                measView.Invoke(new MethodInvoker(delegate { measView.Items.Clear(); }));
+            }
+            for (int i = 1; i <= OPCServer_Simulator.Properties.Settings.Default.numItems; i++)
+            {
+                ListViewItem lvi = new ListViewItem(i.ToString());
+                try
+                {
+                    var value = Properties.Settings.Default["meas" + i] as System.Collections.Specialized.StringCollection;
+                    if (value[histIndex] == "0")
+                        value[histIndex] = "0.000";
+                    lvi.SubItems.Add(value[histIndex]);
+                }
+                catch
+                {
+                    lvi.SubItems.Add("0.000");
+                }
+                if (measView.InvokeRequired)
+                {
+                    measView.Invoke(new MethodInvoker(delegate { measView.Items.Add(lvi); }));
+                }
+                else
+                {
+                    measView.Items.Add(lvi);
+                }
+            }
+        }
+
+        private void shiftDataIndex()
+        {
+            for (int i = 20; i >= 1; i--) // 20 measurements to be affected
+            {
+                for (int k = 19; k > 0; k--) // 20 history values but only swapping 19 because the 0th will be the new value from micrometer
+                {
+                    var value = Properties.Settings.Default["meas" + i] as System.Collections.Specialized.StringCollection;
+                    value[k] = value[k - 1];
+                }
+            }
+            for (int i = 20; i >= 1; i--) //initalize first set to 0 for new data
+            {
+                var value = Properties.Settings.Default["meas" + i] as System.Collections.Specialized.StringCollection;
+                value[0] = "0";
+            }
+            for (int i = 19; i > 0; i--)
+            {
+                Properties.Settings.Default.dateTime[i] = Properties.Settings.Default.dateTime[i - 1];
+            }
         }
 
         private void chngNumItemsBtn_Click(object sender, EventArgs e)
@@ -358,15 +368,6 @@ namespace OPCServer_Simulator
             Properties.Settings.Default.Save();
             updateOPCItems();
             updateDisplayItems();
-        }
-
-        private void numberOnly_KeyPress(object sender, KeyPressEventArgs e) //event only allows numbers
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
         }
 
         private void updatePortsBtn_Click(object sender, EventArgs e) //This updates the portName in SETTINGS (AKA saves the selected port as the port it will try to use on startup)
@@ -421,20 +422,13 @@ namespace OPCServer_Simulator
                 SerialPortConfig.closeSerialPort();
             }
         }
-        private static void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+
+        private void numberOnly_KeyPress(object sender, KeyPressEventArgs e) //event only allows numbers
         {
-            SerialPort sp = (SerialPort)sender;
-            string indata = sp.ReadExisting(); //stores the char that fired the event into 'indata'
-            myString += indata;
-            if (indata.Contains("\r")) //check to see if char received indicates end of measurement
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
             {
-                if (myString == "911\r") //911 is the code given when the micrometer is off, so we have it do nothing
-                    myString = "";
-                else
-                {
-                    myString = myString.Substring(4, 8);
-                    Form1.instance.pendingMeasurement = true;
-                }
+                e.Handled = true;
             }
         }
     }

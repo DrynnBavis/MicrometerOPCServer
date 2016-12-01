@@ -9,67 +9,529 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="dateTime" Type="System.Collections.Specialized.StringCollection" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+  &lt;string /&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas1" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas1" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas2" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas2" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas3" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas3" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas4" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas4" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas5" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas5" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas6" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas6" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas7" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas7" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas8" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas8" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas9" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas9" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas10" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas10" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas11" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas11" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas12" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas12" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas13" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas13" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas14" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas14" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas15" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas15" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas16" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas16" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas17" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas17" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas18" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas18" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas19" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas19" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="meas20" Type="System.Double[]" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="meas20" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+  &lt;string&gt;0&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -26,4 +26,3 @@ C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\OPCServe
 C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\GyptechOPCServer.csproj.GenerateResource.Cache
 C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\GyptechOPCServer.exe
 C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\GyptechOPCServer.pdb
-C:\Users\Public\Documents\BrynnProjects\Micrometer OPC Server\obj\Debug\GyptechOPCServer.csprojResolveAssemblyReference.cache

@@ -49,6 +49,29 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+  <string />
+</ArrayOfString>")]
         public global::System.Collections.Specialized.StringCollection dateTime {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["dateTime"]));
@@ -60,9 +83,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas1 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas1 {
             get {
-                return ((double[])(this["meas1"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas1"]));
             }
             set {
                 this["meas1"] = value;
@@ -71,9 +117,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas2 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas2 {
             get {
-                return ((double[])(this["meas2"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas2"]));
             }
             set {
                 this["meas2"] = value;
@@ -82,9 +151,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas3 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas3 {
             get {
-                return ((double[])(this["meas3"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas3"]));
             }
             set {
                 this["meas3"] = value;
@@ -93,9 +185,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas4 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas4 {
             get {
-                return ((double[])(this["meas4"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas4"]));
             }
             set {
                 this["meas4"] = value;
@@ -104,9 +219,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas5 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas5 {
             get {
-                return ((double[])(this["meas5"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas5"]));
             }
             set {
                 this["meas5"] = value;
@@ -115,9 +253,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas6 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas6 {
             get {
-                return ((double[])(this["meas6"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas6"]));
             }
             set {
                 this["meas6"] = value;
@@ -126,9 +287,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas7 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas7 {
             get {
-                return ((double[])(this["meas7"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas7"]));
             }
             set {
                 this["meas7"] = value;
@@ -137,9 +321,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas8 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas8 {
             get {
-                return ((double[])(this["meas8"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas8"]));
             }
             set {
                 this["meas8"] = value;
@@ -148,9 +355,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas9 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas9 {
             get {
-                return ((double[])(this["meas9"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas9"]));
             }
             set {
                 this["meas9"] = value;
@@ -159,9 +389,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas10 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas10 {
             get {
-                return ((double[])(this["meas10"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas10"]));
             }
             set {
                 this["meas10"] = value;
@@ -170,9 +423,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas11 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas11 {
             get {
-                return ((double[])(this["meas11"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas11"]));
             }
             set {
                 this["meas11"] = value;
@@ -181,9 +457,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas12 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas12 {
             get {
-                return ((double[])(this["meas12"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas12"]));
             }
             set {
                 this["meas12"] = value;
@@ -192,9 +491,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas13 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas13 {
             get {
-                return ((double[])(this["meas13"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas13"]));
             }
             set {
                 this["meas13"] = value;
@@ -203,9 +525,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas14 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas14 {
             get {
-                return ((double[])(this["meas14"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas14"]));
             }
             set {
                 this["meas14"] = value;
@@ -214,9 +559,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas15 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas15 {
             get {
-                return ((double[])(this["meas15"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas15"]));
             }
             set {
                 this["meas15"] = value;
@@ -225,9 +593,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas16 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas16 {
             get {
-                return ((double[])(this["meas16"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas16"]));
             }
             set {
                 this["meas16"] = value;
@@ -236,9 +627,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas17 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas17 {
             get {
-                return ((double[])(this["meas17"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas17"]));
             }
             set {
                 this["meas17"] = value;
@@ -247,9 +661,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas18 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas18 {
             get {
-                return ((double[])(this["meas18"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas18"]));
             }
             set {
                 this["meas18"] = value;
@@ -258,9 +695,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas19 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas19 {
             get {
-                return ((double[])(this["meas19"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas19"]));
             }
             set {
                 this["meas19"] = value;
@@ -269,9 +729,32 @@ namespace OPCServer_Simulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public double[] meas20 {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+  <string>0</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection meas20 {
             get {
-                return ((double[])(this["meas20"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["meas20"]));
             }
             set {
                 this["meas20"] = value;
