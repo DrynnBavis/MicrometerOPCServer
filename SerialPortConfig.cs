@@ -14,6 +14,17 @@ namespace OPCServer_Simulator
         public static SerialPort mySerialPort = new SerialPort();
         public static string myString = "";
         public static bool isOpen { get { return mySerialPort.IsOpen; } }
+        public static string portName
+        {
+            get
+            {
+                return mySerialPort.PortName;
+            }
+            set
+            {
+                mySerialPort.PortName = value;
+            }
+        }
 
 
         public static void createPort (string portName)
@@ -51,7 +62,8 @@ namespace OPCServer_Simulator
                     myString = "";
                 else
                 {
-                    myString = myString.Substring(4, 8);
+                    myString = myString.Substring(4); //removes the first 4 chars
+                    myString = myString.Replace("\r", "");
                     Form1.instance.pendingMeasurement = true;
                 }
             }

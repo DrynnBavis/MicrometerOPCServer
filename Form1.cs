@@ -31,11 +31,23 @@ namespace OPCServer_Simulator
                         try
                         {
                             slikServer1.RegisterServer();
-                            MessageBox.Show("Server registered successfully!");
+                            MessageBox.Show(
+                                "Server registered successfully!", 
+                                "Gyptech Micrometer OPC Server",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information,
+                                MessageBoxDefaultButton.Button1,
+                                MessageBoxOptions.DefaultDesktopOnly);
                         }
                         catch(Exception ex)
                         {
-                            MessageBox.Show("Error: Could not register server." + "\nAdditional Information: " + ex.Message, "Registering Server Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(
+                                "Error: Could not register server." + "\nAdditional Information: " + ex.Message,
+                                "Gyptech Micrometer OPC Server",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error,
+                                MessageBoxDefaultButton.Button1,
+                                MessageBoxOptions.DefaultDesktopOnly);
                         }
                         Environment.Exit(0);
                         break;
@@ -43,11 +55,23 @@ namespace OPCServer_Simulator
                         try
                         {
                             slikServer1.UnregisterServer();
-                            MessageBox.Show("Server unregistered successfully!");
+                            MessageBox.Show(
+                                "Server unregistered successfully!",
+                                "Gyptech Micrometer OPC Server",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information,
+                                MessageBoxDefaultButton.Button1,
+                                MessageBoxOptions.DefaultDesktopOnly);
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Error: Could not unregister server." + "\nAdditional Information: " + ex.Message, "Unregistering Server Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(
+                                "Error: Could not unregister server." + "\nAdditional Information: " + ex.Message,
+                                "Gyptech Micrometer OPC Server",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error,
+                                MessageBoxDefaultButton.Button1,
+                                MessageBoxOptions.DefaultDesktopOnly);
                         }
                         Environment.Exit(0);
                         break;
@@ -57,10 +81,9 @@ namespace OPCServer_Simulator
             }
                 
         }
-
         private ISLIKTags myOpcTags;
         private int itemIndex = 0;
-        private int histIndex = 0;
+        public static Form1 instance;
         private bool _pendingMeasurement = false;
         public bool pendingMeasurement
         {
@@ -79,7 +102,36 @@ namespace OPCServer_Simulator
                 }
             }
         }
-        public static Form1 instance;
+
+        public event IndexChangedEventHandler IndexChanged;
+        public delegate void IndexChangedEventHandler(int newValue);
+
+        protected virtual void OnIndexChanged(int newValue)
+        {
+            if (IndexChanged != null)
+                IndexChanged(newValue);
+        }
+
+        private int _histIndex;
+        public int histIndex
+        {
+            get
+            {
+                return _histIndex;
+            }
+            set
+            {
+                if (value > 19)
+                    value = 19; // Prevent user from breaking out of bounds
+                _histIndex = value;
+                OnIndexChanged(value);
+            }
+        }
+
+        private void IndexChanged_EventHandler(int newValue)
+        {
+            updateOPCItems();
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -93,26 +145,11 @@ namespace OPCServer_Simulator
             // create a new instance of an empty tag database
             myOpcTags = slikServer1.SLIKTags;
 
-            // define a simple read/write access-right, saves us OR'ing this
-            // enumeration multiple times
-            AccessPermissionsEnum readWriteAccess = AccessPermissionsEnum.sdaReadAccess | AccessPermissionsEnum.sdaWriteAccess;
-
-
-            // A Tag name is "just" a name. But when you prefix that name with a '.'
-            // then the OPC Server toolkit will automatically place that tag within
-            // a group. This simplifies the OPC Client experience when they browse
-            // your OPC Servers address-space.
-            // In this case, we will define a group: "USER"
-            // .... you will see it prefixed to the tagnames.
-            myOpcTags.Add("MicrometerTags.dateTime", (int)readWriteAccess, 0, 0, DateTime.Now, null);
-            myOpcTags["MicrometerTags.dateTime"].DataType = (short)VariantType.String;
-            myOpcTags["MicrometerTags.dateTime"].SetVQT("", 192, DateTime.Now);
-            myOpcTags.Add("MicrometerTags.index", (int)readWriteAccess, 0, 0, DateTime.Now, null);
-            myOpcTags["MicrometerTags.index"].DataType = (short)VariantType.Integer;
-            myOpcTags["MicrometerTags.index"].SetVQT((0.0000), 192, DateTime.Now);
-            myOpcTags["MicrometerTags.index"].AccessPermissions = 3;
+            clearAndAddOPCItems();
 
             slikServer1.StartServer();
+
+            this.IndexChanged += new IndexChangedEventHandler(IndexChanged_EventHandler);
 
             //Populate tags with number of items the user requested
             updateOPCItems();
@@ -185,8 +222,15 @@ namespace OPCServer_Simulator
                 ISLIKTag currentItem = eventArgs.Tags[i];
                 object currentValue = eventArgs.Values[i];
 
+                // Checking here to see if index was the written to tag, then updating `histIndex` in this program to have the same value as tag 'index'
+                if (currentItem.Name == "MicrometerTags.index")
+                {
+                    histIndex = Convert.ToInt32(currentValue);
+                }
+
                 // We will look at the name of the OPC Tag to then figure out WHERE
                 // to SEND the data to....
+                currentItem.SetVQT(currentValue, 192, DateTime.Now);
 
                 // Specify that the Item at *this* position is NOT in error!
                 eventArgs.Errors[i] = (int)OPCDAErrorsEnum.sdaSOK;
@@ -199,46 +243,6 @@ namespace OPCServer_Simulator
 
         private void SlikServer1_OnRead(object sender, SLIKServer.OnReadEventArgs eventArgs)
         {
-            //
-            // Iterate thru each/every item that the OPC Client has requested us to READ
-
-            {
-
-                for (int i = 0; i <= (eventArgs.Count - 1); i++)
-                {
-                    // Get the "next" item in the list
-                    ISLIKTag currentItem = eventArgs.Tags[i];
-
-                    // Now to return the value of this tag, along with
-                    // GOOD quality, and a current timestamp
-                    //   (Quality codes are: 192=GOOD; 0=BAD)
-                    //
-                    // We will look at the name of the OPC Tag to then figure out WHERE
-                    // to get the data from....
-
-                    switch ((currentItem.Name))
-                    {
-                        // Checkbox on the LEFT side of the form
-                        case "MicrometerTags.LogSet":
-                            eventArgs.Tags[i].SetVQT(true, 192, DateTime.Now);
-
-                            break;
-                        default:
-                            eventArgs.Tags[i].SetVQT(Convert.ToDouble(100), 192, DateTime.Now);
-
-                            break;
-                    }
-
-
-                    // Specify that the Item at *this* position is NOT in error!
-                    eventArgs.Errors[i] = (int)OPCDAErrorsEnum.sdaSOK;
-                }
-
-                // Now specify that we completed this event successfully
-                eventArgs.Result = (int)OPCDAErrorsEnum.sdaSOK;
-
-            }
-
 
         }
 
@@ -246,6 +250,7 @@ namespace OPCServer_Simulator
         {
             if (pendingMeasurement)
             {
+                histIndex = 0;
                 if (itemIndex == OPCServer_Simulator.Properties.Settings.Default.numItems)
                 {
                     updateDisplayItems();
@@ -279,35 +284,35 @@ namespace OPCServer_Simulator
             string comPortName = null;
 
             comPortsNames = SerialPort.GetPortNames();
-            Array.Sort(comPortsNames);
-            do
+            if (comPortsNames.Length == 0)
             {
-                index += 1;
-                comPortCombo.Items.Add(comPortsNames[index]);
+                MessageBox.Show("Error: No available COM ports detected. Please ensure ports are visible in device manager.",
+                    "No ports detected", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
-            while (!((comPortsNames[index] == comPortName) ||
-                                (index == comPortsNames.GetUpperBound(0))));
+            else
+            {
+                Array.Sort(comPortsNames);
+                do
+                {
+                    index += 1;
+                    if (comPortsNames.Length > 0)
+                        comPortCombo.Items.Add(comPortsNames[index]);
+                }
+                while (!((comPortsNames[index] == comPortName) ||
+                                    (index == comPortsNames.GetUpperBound(0))));
+            }
         }
 
         private void updateOPCItems()
         {
-            AccessPermissionsEnum readWriteAccess = AccessPermissionsEnum.sdaReadAccess | AccessPermissionsEnum.sdaWriteAccess;
-            if (myOpcTags != null)
-                myOpcTags.Clear();
-            myOpcTags.Add("MicrometerTags.index", (int)readWriteAccess, 0, 0, DateTime.Now, null);
-            myOpcTags["MicrometerTags.index"].DataType = (short)VariantType.Integer;
-            myOpcTags["MicrometerTags.index"].SetVQT((0), 192, DateTime.Now);
-            myOpcTags.Add("MicrometerTags.dateTime", (int)AccessPermissionsEnum.sdaReadAccess, 0, 0, DateTime.Now, null);
-            myOpcTags["MicrometerTags.dateTime"].DataType = (short)VariantType.String;
-            myOpcTags["MicrometerTags.dateTime"].SetVQT(Properties.Settings.Default.dateTime[histIndex], 192, DateTime.Now);
-            for (int i = 1; i <= Convert.ToInt32(numMeasBox.Text); i++) //adding the specified number of items to OPC server
+            for (int i = 1; i <= Convert.ToInt32(Properties.Settings.Default.numItems); i++) //adding the specified number of items to OPC server
             {
-                myOpcTags.Add("MicrometerTags.meas" + i.ToString(), (int)readWriteAccess, 0, 0, DateTime.Now, null);
-                myOpcTags["MicrometerTags.meas" + i.ToString()].DataType = (short)VarEnum.VT_R8;
                 var value = Properties.Settings.Default["meas" + i] as System.Collections.Specialized.StringCollection;
                 double dValue = Convert.ToDouble(value[histIndex]);
                 myOpcTags["MicrometerTags.meas" + i.ToString()].SetVQT((dValue), 192, DateTime.Now);
             }
+            myOpcTags["MicrometerTags.index"].SetVQT((histIndex), 192, DateTime.Now);
+            myOpcTags["MicrometerTags.dateTime"].SetVQT(Properties.Settings.Default.dateTime[histIndex], 192, DateTime.Now);
         }
 
         private void updateDisplayItems()
@@ -315,6 +320,10 @@ namespace OPCServer_Simulator
             if (measView.InvokeRequired)
             {
                 measView.Invoke(new MethodInvoker(delegate { measView.Items.Clear(); }));
+            }
+            else
+            {
+                measView.Items.Clear();
             }
             for (int i = 1; i <= OPCServer_Simulator.Properties.Settings.Default.numItems; i++)
             {
@@ -324,7 +333,7 @@ namespace OPCServer_Simulator
                     var value = Properties.Settings.Default["meas" + i] as System.Collections.Specialized.StringCollection;
                     if (value[histIndex] == "0")
                         value[histIndex] = "0.000";
-                    lvi.SubItems.Add(value[histIndex]);
+                    lvi.SubItems.Add((Convert.ToDouble(value[histIndex])).ToString()); //converting string to double and back to string again to get rid of unneeded 0s
                 }
                 catch
                 {
@@ -358,21 +367,75 @@ namespace OPCServer_Simulator
             }
             for (int i = 19; i > 0; i--)
             {
+                string dateOld = Properties.Settings.Default.dateTime[i];
+                string dateNew = Properties.Settings.Default.dateTime[i - 1];
                 Properties.Settings.Default.dateTime[i] = Properties.Settings.Default.dateTime[i - 1];
             }
+            Properties.Settings.Default.dateTime[0] = "";
+        }
+
+        private void clearMemory()
+        {
+            for (int k = 0; k <= 19; k++)
+            {
+                for (int i = 1; i <= 20; i++) //adding the specified number of items to OPC server
+                {
+                    var value = Properties.Settings.Default["meas" + i] as System.Collections.Specialized.StringCollection;
+                    value[k] = "0";
+                }
+                var memDate = Properties.Settings.Default["dateTime"] as System.Collections.Specialized.StringCollection;
+                memDate[k] = "0";
+            }
+            Properties.Settings.Default.Save();
+            itemIndex = 0;
+            updateDisplayItems();
+            updateOPCItems();
+        }
+
+        private void clearAndAddOPCItems()
+        {
+            // A Tag name is "just" a name. But when you prefix that name with a '.'
+            // then the OPC Server toolkit will automatically place that tag within
+            // a group. This simplifies the OPC Client experience when they browse
+            // your OPC Servers address-space.
+            // In this case, I've made a group called "MicrometerTags" and then each
+            // item is created with '.' + 'itemName'.
+
+            if (myOpcTags != null)
+                myOpcTags.Clear();
+            myOpcTags.Add("MicrometerTags.dateTime", (int)AccessPermissionsEnum.sdaReadAccess, 0, 0, DateTime.Now, null);
+            myOpcTags["MicrometerTags.dateTime"].DataType = (short)VariantType.String;
+            myOpcTags["MicrometerTags.dateTime"].SetVQT("", 192, DateTime.Now);
+            myOpcTags.Add("MicrometerTags.index", 3, 0, 0, DateTime.Now, null);
+            myOpcTags["MicrometerTags.index"].DataType = (short)VariantType.Integer;
+            myOpcTags["MicrometerTags.index"].SetVQT((0), 192, DateTime.Now);
+            for (int i = 1; i <= Convert.ToInt32(Properties.Settings.Default.numItems); i++) //adding the specified number of items to OPC server
+            {
+                myOpcTags.Add("MicrometerTags.meas" + i, (int)AccessPermissionsEnum.sdaReadAccess, 0, 0, DateTime.Now, null);
+                myOpcTags["MicrometerTags.meas" + i].DataType = (short)VarEnum.VT_R8;
+                myOpcTags["MicrometerTags.meas" + i].SetVQT((0.000), 192, DateTime.Now);
+            }
+
         }
 
         private void chngNumItemsBtn_Click(object sender, EventArgs e)
         {
-            OPCServer_Simulator.Properties.Settings.Default.numItems = Convert.ToUInt32(numMeasBox.Text); //update value in settings
-            Properties.Settings.Default.Save();
-            updateOPCItems();
-            updateDisplayItems();
+            if (MessageBox.Show("Warning: Changing the number of measurements will reset the recorded sets in memory and clients will have to rebrowse for the new items. \n\nAre you sure you wish to continue?", "Continue?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                clearMemory();
+                OPCServer_Simulator.Properties.Settings.Default.numItems = Convert.ToUInt32(numMeasBox.Text); //update value in settings
+                Properties.Settings.Default.Save();
+                updateDisplayItems();
+                clearAndAddOPCItems();
+            }
+            else
+            { }
         }
 
         private void updatePortsBtn_Click(object sender, EventArgs e) //This updates the portName in SETTINGS (AKA saves the selected port as the port it will try to use on startup)
         {
             OPCServer_Simulator.Properties.Settings.Default.portName = comPortCombo.Text;
+            SerialPortConfig.portName = Properties.Settings.Default.portName;
             Properties.Settings.Default.Save();
         }
 
@@ -430,6 +493,41 @@ namespace OPCServer_Simulator
             {
                 e.Handled = true;
             }
+        }
+
+        private void slikServer1_OnWriteVQT(object sender, SLIKServer.OnWriteVQTEventArgs eventArgs)
+        {
+            for (int i = 0; i <= (eventArgs.Count - 1); i++)
+            {
+                // Get the "next" item in the list
+                ISLIKTag currentItem = eventArgs.Tags[i];
+                object currentValue = eventArgs.Values[i];
+                short currentQuality = eventArgs.Qualities[i];
+                System.DateTime currentTimeStamp = eventArgs.Timestamps[i];
+
+                // Checking here to see if index was the written to tag, then updating `histIndex` in this program to have the same value as tag 'index'
+                if (currentItem.Name == "MicrometerTags.index")
+                {
+                    histIndex = Convert.ToInt32(currentValue);
+                }
+                currentItem.SetVQT(currentValue, currentQuality, currentTimeStamp);
+
+                // We will look at the name of the OPC Tag to then figure out WHERE
+                // to SEND the data to....
+
+                // Specify that the Item at *this* position is NOT in error!
+                eventArgs.Errors[i] = (int)OPCDAErrorsEnum.sdaSOK;
+            }
+        }
+
+        private void clrMemBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Warning: Clearing memory will result in loss of all previously saved data sets and clients will have to rebrowse for the new items. \n\nAre you sure you wish to continue?", "Continue?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                clearMemory();
+            }
+            else
+            { }
         }
     }
 }

@@ -21,12 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0A3595EAB5634A119A3955AB43D79D62"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_11F08BBABB0240A9BA7D04C720A99B85"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -39,31 +33,31 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_4C8D12215B2C4A2AAD49EAA35C1E066F"
+        "MsmKey" = "8:_19E0C2DA89C24A5D931DBE9BFB4970D4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_864608BBC1AE4AEB9B0FC368BF0272D0"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_905FF66DB4BB4BB5AF76F539084A9FD5"
+        "MsmKey" = "8:_1E2B7C746B944A3795A76A49529FA2E9"
         "OwnerKey" = "8:_01245D5F106B4E478367C42BCE1CE8E5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_905FF66DB4BB4BB5AF76F539084A9FD5"
-        "OwnerKey" = "8:_FFEE22B4E77C44B694A20A82A3368026"
+        "MsmKey" = "8:_1E2B7C746B944A3795A76A49529FA2E9"
+        "OwnerKey" = "8:_BDA787DC8B40487593EFF5ED919EDD2E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_9AC58F4D56C14D638E60743F255435AF"
+        "MsmKey" = "8:_3F5F7E9B1A544549AADDC087C7D21302"
+        "OwnerKey" = "8:_19E0C2DA89C24A5D931DBE9BFB4970D4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_864608BBC1AE4AEB9B0FC368BF0272D0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -75,7 +69,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_FFEE22B4E77C44B694A20A82A3368026"
+        "MsmKey" = "8:_BDA787DC8B40487593EFF5ED919EDD2E"
         "OwnerKey" = "8:_01245D5F106B4E478367C42BCE1CE8E5"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -169,6 +163,34 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_7DDAD952EE1B494483C3BA639BB7583E"
+            {
+            "Name" = "8:Primary output from GyptechOPCServer (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_864608BBC1AE4AEB9B0FC368BF0272D0"
+            "FileType" = "3:2"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:unregister"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_067B0576_665E_4AB3_9526_FD44F1BEF57F"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_8147C45061734D7F982B782EA2650307"
+            {
+            "Name" = "8:Primary output from GyptechOPCServer (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_864608BBC1AE4AEB9B0FC368BF0272D0"
+            "FileType" = "3:2"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:register"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_489E13CA_62FB_4270_AC13_1098DF2C951F"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -192,26 +214,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0A3595EAB5634A119A3955AB43D79D62"
-            {
-            "SourcePath" = "8:..\\Resources\\unregserver.js"
-            "TargetName" = "8:unregserver.js"
-            "Tag" = "8:"
-            "Folder" = "8:_5A1B5201D3BD4766BFE80EAB28ABE261"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_11F08BBABB0240A9BA7D04C720A99B85"
             {
             "AssemblyRegister" = "3:1"
@@ -247,26 +249,6 @@
             {
             "SourcePath" = "8:..\\Resources\\icon.ico"
             "TargetName" = "8:icon.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_5A1B5201D3BD4766BFE80EAB28ABE261"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4C8D12215B2C4A2AAD49EAA35C1E066F"
-            {
-            "SourcePath" = "8:..\\Resources\\regserver.js"
-            "TargetName" = "8:regserver.js"
             "Tag" = "8:"
             "Folder" = "8:_5A1B5201D3BD4766BFE80EAB28ABE261"
             "Condition" = "8:"
@@ -380,13 +362,13 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:GyptechOPCSetup"
+        "ProductName" = "8:GyptechMicrometerOPCServer"
         "ProductCode" = "8:{618D4F3D-D16A-4296-A5B2-0AEB95A5597B}"
-        "PackageCode" = "8:{A5BA7B1E-DA45-495D-AD65-50CA53D11A47}"
+        "PackageCode" = "8:{4999C3BC-D17D-458F-B948-50A032BA321B}"
         "UpgradeCode" = "8:{08ED8017-F773-417E-A29D-82657937028D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
@@ -398,8 +380,8 @@
         "ARPCONTACT" = "8:Gyptech"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
-        "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPURLINFOABOUT" = "8:http://www.gypsumtechnologies.com/"
+        "ARPPRODUCTICON" = "8:_15E48F4CFA4E40BB8F1E96B3E78C7458"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -954,25 +936,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_905FF66DB4BB4BB5AF76F539084A9FD5"
-            {
-            "UseDynamicProperties" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:microsoft_vc90_crt_x86.msm"
-                "Properties"
-                {
-                }
-            "LanguageId" = "3:0"
-            "Exclude" = "11:FALSE"
-            "Folder" = "8:"
-            "Feature" = "8:"
-            "IsolateTo" = "8:"
-            }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_9AC58F4D56C14D638E60743F255435AF"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_19E0C2DA89C24A5D931DBE9BFB4970D4"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:FALSE"
-            "SourcePath" = "8:C:\\Program Files (x86)\\Software Toolbox\\SLIK-DA5\\Redistributables\\MergeModules\\OPC COM ProxyStub MergeModule (x86).msm"
+            "SourcePath" = "8:..\\..\\..\\..\\..\\Administrator\\Desktop\\OPC COM ProxyStub MergeModule (x86).msm"
                 "Properties"
                 {
                     "_0C6A309CD7734B348A26BAFBF1D88197.E25DF0F20F2947E88537265285ED9757"
@@ -993,7 +961,35 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_FFEE22B4E77C44B694A20A82A3368026"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_1E2B7C746B944A3795A76A49529FA2E9"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "SourcePath" = "8:microsoft_vc90_crt_x86.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_3F5F7E9B1A544549AADDC087C7D21302"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "SourcePath" = "8:microsoft_vc120_crt_x86.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_BDA787DC8B40487593EFF5ED919EDD2E"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"

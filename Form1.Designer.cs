@@ -37,6 +37,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pressTimer = new System.Windows.Forms.Timer(this.components);
             this.GroupBox3 = new System.Windows.Forms.GroupBox();
+            this.clrMemBtn = new System.Windows.Forms.Button();
             this.measView = new System.Windows.Forms.ListView();
             this.Index = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Measurement = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -106,6 +107,7 @@
             // 
             // GroupBox3
             // 
+            this.GroupBox3.Controls.Add(this.clrMemBtn);
             this.GroupBox3.Controls.Add(this.measView);
             this.GroupBox3.Location = new System.Drawing.Point(12, 12);
             this.GroupBox3.Name = "GroupBox3";
@@ -113,6 +115,16 @@
             this.GroupBox3.TabIndex = 12;
             this.GroupBox3.TabStop = false;
             this.GroupBox3.Text = "Measurement Data";
+            // 
+            // clrMemBtn
+            // 
+            this.clrMemBtn.Location = new System.Drawing.Point(166, 22);
+            this.clrMemBtn.Name = "clrMemBtn";
+            this.clrMemBtn.Size = new System.Drawing.Size(87, 23);
+            this.clrMemBtn.TabIndex = 19;
+            this.clrMemBtn.Text = "Clear Memory";
+            this.clrMemBtn.UseVisualStyleBackColor = true;
+            this.clrMemBtn.Click += new System.EventHandler(this.clrMemBtn_Click);
             // 
             // measView
             // 
@@ -241,6 +253,7 @@
             // 
             // comPortCombo
             // 
+            this.comPortCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comPortCombo.FormattingEnabled = true;
             this.comPortCombo.Location = new System.Drawing.Point(74, 19);
             this.comPortCombo.Name = "comPortCombo";
@@ -266,6 +279,10 @@
             this.slikServer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("slikServer1.OcxState")));
             this.slikServer1.Size = new System.Drawing.Size(32, 32);
             this.slikServer1.TabIndex = 18;
+            this.slikServer1.OnClientConnect += new NDI.SLIKDA.Interop.SLIKServer.OnClientConnectEventHandler(this.SlikServer1_OnClientConnect);
+            this.slikServer1.OnClientDisconnect += new NDI.SLIKDA.Interop.SLIKServer.OnClientDisconnectEventHandler(this.SlikServer1_OnClientDisconnect);
+            this.slikServer1.OnWrite += new NDI.SLIKDA.Interop.SLIKServer.OnWriteEventHandler(this.SlikServer1_OnWrite);
+            this.slikServer1.OnWriteVQT += new NDI.SLIKDA.Interop.SLIKServer.OnWriteVQTEventHandler(this.slikServer1_OnWriteVQT);
             // 
             // Form1
             // 
@@ -317,7 +334,8 @@
         private System.Windows.Forms.Label portStatusLbl;
         private System.Windows.Forms.Button closePortBtn;
         private System.Windows.Forms.Button openPortBtn;
-        private NDI.SLIKDA.Interop.SLIKServer slikServer1;
+        private System.Windows.Forms.Button clrMemBtn;
+        public NDI.SLIKDA.Interop.SLIKServer slikServer1;
     }
 }
 
